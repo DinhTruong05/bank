@@ -1,21 +1,21 @@
 import java.util.Scanner;
 
-public class lai_bank {
+public class LaiBank {
     public static void main(String[] args) {
         Scanner scan = new Scanner(System.in);
         while (true) {
             System.out.println("Nhap so tien gui : ");
             int tien = scan.nextInt();
             System.out.println("Nhap lai xuat / nam : ");
-            double lai = scan.nextInt();
+            double lai = scan.nextDouble();
             lai = lai / 100;
             System.out.println("So thang gui : ");
             int month = scan.nextInt();
             if (tien <= 0 || lai <= 0 || month <= 0) {
                 System.out.println("vui long nhap lai");
-                break;
+                continue;
             } else {
-                double tien_lai = tien * ((double) lai / 12) * month;
+                double tien_lai = tien * (lai / 12) * month;
                 System.out.println("Tien lai la: " + String.format("%,.0f", tien_lai));
             }
             System.out.println("Nhập 'end' để kết thúc hoặc nhấn Enter để tiếp tục:");
